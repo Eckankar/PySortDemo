@@ -50,7 +50,8 @@ def main():
             'insertionsort': InsertionSort(),
             'quicksort'    : QuickSort(),
             'selectionsort': SelectionSort(),
-            'mergesort'    : MergeSort()
+            'mergesort'    : MergeSort(),
+            'bubblesort'   : BubbleSort(),
         }[options.algorithm];
     except KeyError:
         algorithm = InsertionSort()
