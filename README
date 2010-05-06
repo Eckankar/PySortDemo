@@ -1,0 +1,6 @@
+This project is intended to help visualize different sorting algorithms.
+
+To run the program, run SortDisplay.py.
+
+For help on the command-line arguments accepted, run:
+    SortDisplay.py --help
