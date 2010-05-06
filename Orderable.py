@@ -2,7 +2,7 @@ from random import random
 
 class Orderable:
     def __init__(self, n):
-        self.items = [random() for i in range(1, n)]
+        self.items = [random() for i in range(n)]
         self.swaps = 0
 
     def swap(self, i, j):
