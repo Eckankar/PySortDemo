@@ -8,8 +8,8 @@ from optparse import OptionParser
 from time import sleep
 
 class SortDisplay:
-    numLines = 100
-    width = 150
+    numLines = 150
+    width = 400
 
     def __init__(self, algorithm, stopEvent):
         self.stopEvent = stopEvent
@@ -52,6 +52,8 @@ def main():
             'selectionsort': SelectionSort(),
             'mergesort'    : MergeSort(),
             'bubblesort'   : BubbleSort(),
+            'bibubblesort' : BidirectionalBubbleSort(),
+            'shellsort'    : ShellSort(),
         }[options.algorithm];
     except KeyError:
         algorithm = InsertionSort()
@@ -62,7 +64,7 @@ def main():
     
     def update():
         while True:
-            stopEvent.wait(0.02)
+            stopEvent.wait(0.005)
             if stopEvent.isSet():
                 break
             disp.update()
@@ -77,8 +79,6 @@ def main():
                 
     print disp.items.swaps, "swaps"
     print disp.cmp.comparisons, "comparisons"
-    
-    sleep(10)
     
 if __name__ == "__main__":
     main()
