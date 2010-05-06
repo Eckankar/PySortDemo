@@ -54,6 +54,7 @@ def main():
             'bubblesort'   : BubbleSort(),
             'bibubblesort' : BidirectionalBubbleSort(),
             'shellsort'    : ShellSort(),
+            'heapsort'     : HeapSort(),
         }[options.algorithm];
     except KeyError:
         algorithm = InsertionSort()
