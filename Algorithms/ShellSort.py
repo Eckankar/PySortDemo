@@ -12,11 +12,12 @@ class ShellSort:
             hs.append(h)
         hs.reverse()
         
-        for s in hs:
-            for i in range(0, len(self.items.items), s):
-                min = i
-                for j in range(i, len(self.items.items)):
-                    if self.cmp.gtI(min, j):
-                        min = j
-                self.items.swap(i, min)
-                yield
+        for step in hs:
+            for start in range(0, step):
+                    for i in range(start, len(self.items.items), step):
+                        j = i - step
+                        while self.cmp.gtI(j, j + step) and self.cmp.gte(j, start):
+                            self.items.swap(j, j + step)
+                            j -= step
+                            yield
+                        yield
