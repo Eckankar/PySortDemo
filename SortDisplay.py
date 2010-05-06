@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from Orderable import Orderable
 from Comparator import Comparator
 import pygame
