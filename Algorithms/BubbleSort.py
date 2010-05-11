@@ -1,8 +1,6 @@
-class BubbleSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+from SortAlgorithm import SortAlgorithm
+
+class BubbleSort(SortAlgorithm):
     def sort(self): 
         yield
         changed = True

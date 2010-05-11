@@ -1,8 +1,6 @@
-class BidirectionalBubbleSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+from SortAlgorithm import SortAlgorithm
+
+class BidirectionalBubbleSort(SortAlgorithm):
     def sort(self): 
         yield
         goingDown = True

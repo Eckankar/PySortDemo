@@ -1,8 +1,6 @@
-class QuickSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+from SortAlgorithm import SortAlgorithm
+
+class QuickSort(SortAlgorithm):
     def sort(self): 
         yield
         for x in self.quicksort(0, len(self.items.items) - 1):

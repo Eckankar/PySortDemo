@@ -1,10 +1,7 @@
 from math import floor
+from SortAlgorithm import SortAlgorithm
 
-class MergeSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+class MergeSort(SortAlgorithm):
     def sort(self): 
         yield
         for x in self.mergesort(0, len(self.items.items) - 1):

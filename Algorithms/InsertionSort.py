@@ -1,8 +1,6 @@
-class InsertionSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+from SortAlgorithm import SortAlgorithm
+
+class InsertionSort(SortAlgorithm):
     def sort(self): 
         yield
         for i in range(1, len(self.items.items)):

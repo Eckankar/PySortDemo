@@ -1,8 +1,6 @@
-class HeapSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
+from SortAlgorithm import SortAlgorithm
 
+class HeapSort(SortAlgorithm):
     def sort(self):
         yield
         for x in self.buildMaxHeap():

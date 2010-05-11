@@ -1,8 +1,6 @@
-class ShellSort:
-    def initialize(self, cmp, items):
-        self.cmp = cmp
-        self.items = items
-        
+from SortAlgorithm import SortAlgorithm
+
+class ShellSort(SortAlgorithm):
     def sort(self): 
         yield
         hs = [1]
