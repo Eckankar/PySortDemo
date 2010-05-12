@@ -10,12 +10,11 @@ from time import sleep
 
 class SortDisplay:
     """Visualization of sorting algorithms."""
-
-    numLines = 100
-    width = 400
-
-    def __init__(self, algorithm, stop_event):
+    def __init__(self, algorithm, stop_event, options):
         self.stopEvent = stop_event
+
+        self.numLines = options.numLines
+        self.width = options.width
 
         self.items = Orderable(self.numLines)
         self.cmp = Comparator(self.items)
@@ -85,12 +84,18 @@ def main():
     parser.add_option('-d', '--delay', type='float',
                       default=0.01, dest='delay',
                       help='delay between each step in seconds')
+    parser.add_option('-w', '--width', type='int',
+                      default=400, dest='width',
+                      help='width of window')
+    parser.add_option('-n', type='int',
+                      default=100, dest='numLines',
+                      help='number of lines to sort')
     (options, args) = parser.parse_args()
     algorithm = algorithms[options.algorithm];
 
     stopEvent = Event()
 
-    disp = SortDisplay(algorithm, stopEvent)
+    disp = SortDisplay(algorithm, stopEvent, options)
 
     def update():
         """ Update loop; updates the screen every few seconds. """
