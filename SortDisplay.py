@@ -26,7 +26,7 @@ class SortDisplay:
         self.gen = algorithm.sort()
 
         pygame.init()
-        self.window = pygame.display.set_mode((self.width, 6 * self.numLines))
+        self.window = pygame.display.set_mode((self.width, 6 * (self.numLines+1)))
 
         self.i = 0
         self.update()
@@ -57,6 +57,8 @@ class SortDisplay:
                              (xStart, y), (xEnd, y))
 
         pygame.display.flip()
+
+    def step(self):
         try:
             self.gen.next()
         except StopIteration:
@@ -95,9 +97,10 @@ def main():
         """ Update loop; updates the screen every few seconds. """
         while True:
             stopEvent.wait(options.delay)
+            disp.update()
             if stopEvent.isSet():
                 break
-            disp.update()
+            disp.step()
 
     t = Thread(target=update)
     t.start()
