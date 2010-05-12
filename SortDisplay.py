@@ -96,15 +96,11 @@ def main():
     def update():
         """ Update loop; updates the screen every few seconds. """
         while True:
-            try:
-                stopEvent.wait(options.delay)
-                disp.update()
-                if stopEvent.isSet():
-                    break
-                disp.step()
-            except KeyboardInterrupt:
-                stopEvent.set()
+            stopEvent.wait(options.delay)
+            disp.update()
+            if stopEvent.isSet():
                 break
+            disp.step()
 
     t = Thread(target=update)
     t.start()
