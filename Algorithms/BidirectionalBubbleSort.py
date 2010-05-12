@@ -1,11 +1,11 @@
 from SortAlgorithm import SortAlgorithm
 
 class BidirectionalBubbleSort(SortAlgorithm):
-    def sort(self): 
+    def sort(self):
         yield
         goingDown = True
         changed = True
-        p = 0        
+        p = 0
         r = len(self.items.items)-1
         while p != r and changed:
             changed = False
@@ -19,11 +19,11 @@ class BidirectionalBubbleSort(SortAlgorithm):
             else:
                 for i in range(r, p, -1):
                     if self.cmp.gtI(i-1, i):
-                        self.items.swap(i-1, i)       
+                        self.items.swap(i-1, i)
                         changed = True
                     yield
                 p += 1
-                
+
             goingDown = not goingDown
             yield
-            
+
