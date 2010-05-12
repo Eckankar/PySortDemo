@@ -49,6 +49,9 @@ def main():
     parser.add_option('-a', '--algorithm', type='string',
                       default='insertion', dest='algorithm',
                       help='algorithm to use')
+    parser.add_option('-d', '--delay', type='float',
+                      default=0.01, dest='delay',
+                      help='delay between each step in seconds')
     (options, args) = parser.parse_args()
     try:
         algorithm = {
@@ -71,7 +74,7 @@ def main():
     def update():
         """ Update loop; updates the screen every few seconds. """
         while True:
-            stopEvent.wait(0.005)
+            stopEvent.wait(options.delay)
             if stopEvent.isSet():
                 break
             disp.update()
