@@ -67,16 +67,7 @@ class SortDisplay:
 
 def main():
     """ Main method, called on execution of the .py from the commandline """
-    parser = OptionParser()
-    parser.add_option('-a', '--algorithm', type='string',
-                      default='insertion', dest='algorithm',
-                      help='algorithm to use')
-    parser.add_option('-d', '--delay', type='float',
-                      default=0.01, dest='delay',
-                      help='delay between each step in seconds')
-    (options, args) = parser.parse_args()
-    try:
-        algorithm = {
+    algorithms = {
             'insertionsort': InsertionSort(),
             'quicksort'    : QuickSort(),
             'selectionsort': SelectionSort(),
@@ -85,9 +76,17 @@ def main():
             'bibubblesort' : BidirectionalBubbleSort(),
             'shellsort'    : ShellSort(),
             'heapsort'     : HeapSort(),
-        }[options.algorithm];
-    except KeyError:
-        algorithm = InsertionSort()
+    }
+    parser = OptionParser()
+    parser.add_option('-a', '--algorithm', type='choice',
+                      default='mergesort', dest='algorithm',
+                      choices=algorithms.keys(),
+                      help='algorithm to use')
+    parser.add_option('-d', '--delay', type='float',
+                      default=0.01, dest='delay',
+                      help='delay between each step in seconds')
+    (options, args) = parser.parse_args()
+    algorithm = algorithms[options.algorithm];
 
     stopEvent = Event()
 
