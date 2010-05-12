@@ -96,19 +96,26 @@ def main():
     def update():
         """ Update loop; updates the screen every few seconds. """
         while True:
-            stopEvent.wait(options.delay)
-            disp.update()
-            if stopEvent.isSet():
+            try:
+                stopEvent.wait(options.delay)
+                disp.update()
+                if stopEvent.isSet():
+                    break
+                disp.step()
+            except KeyboardInterrupt:
+                stopEvent.set()
                 break
-            disp.step()
 
     t = Thread(target=update)
     t.start()
 
     while not stopEvent.isSet():
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                stopEvent.set()
+        try:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    stopEvent.set()
+        except KeyboardInterrupt:
+            stopEvent.set()
 
     print disp.items.swaps, "swaps"
     print disp.cmp.comparisons, "comparisons"
