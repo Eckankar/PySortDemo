@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from Orderable import Orderable
 from Comparator import Comparator
+from Markers import Markers
 import pygame
 from threading import Event, Thread
 from Algorithms import *
@@ -10,7 +11,7 @@ from time import sleep
 class SortDisplay:
     """Visualization of sorting algorithms."""
 
-    numLines = 150
+    numLines = 100
     width = 400
 
     def __init__(self, algorithm, stop_event):
@@ -18,13 +19,14 @@ class SortDisplay:
 
         self.items = Orderable(self.numLines)
         self.cmp = Comparator(self.items)
+        self.markers = Markers()
 
-        algorithm.initialize(self.cmp, self.items)
+        algorithm.initialize(self.cmp, self.items, self.markers)
 
         self.gen = algorithm.sort()
 
         pygame.init()
-        self.window = pygame.display.set_mode((self.width, 5 * self.numLines))
+        self.window = pygame.display.set_mode((self.width, 6 * self.numLines))
 
         self.i = 0
         self.update()
@@ -33,9 +35,27 @@ class SortDisplay:
         """ Update the graphical display. """
         self.window.fill((255, 255, 255))
         for i in range(0, len(self.items.items)):
-            y = 5*(i+1)
+            y = 6 * (i+1)
             pygame.draw.line(self.window, (0, 0, 0), (3, y),\
                              ((self.width-6) * self.items.items[i] + 3, y))
+
+        for id, marker in self.markers.markers.iteritems():
+            y = 6 * (marker['index'] + 1)
+
+            if marker['above']:
+                y -= 3
+                xStart = 2
+                xEnd = self.width - 2
+            else:
+                xStart = 3
+                try:
+                    xEnd = (self.width - 6) * self.items.items[marker['index']] + 3
+                except:
+                    xEnd = 3
+
+            pygame.draw.line(self.window, marker['color'],\
+                             (xStart, y), (xEnd, y))
+
         pygame.display.flip()
         try:
             self.gen.next()
