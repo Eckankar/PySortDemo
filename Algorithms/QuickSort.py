@@ -1,11 +1,11 @@
 from SortAlgorithm import SortAlgorithm
 
 class QuickSort(SortAlgorithm):
-    def sort(self): 
+    def sort(self):
         yield
         for x in self.quicksort(0, len(self.items.items) - 1):
             yield
-           
+
     def quicksort(self, p, r):
         if self.cmp.lt(p, r):
             for x in self.partition(p, r):
@@ -15,7 +15,7 @@ class QuickSort(SortAlgorithm):
                 yield
             for x in self.quicksort(q+1, r):
                 yield
-    
+
     def partition(self, p, r):
         i = p - 1
         for j in range(p, r):
