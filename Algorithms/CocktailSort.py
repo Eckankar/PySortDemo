@@ -1,6 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
-class BidirectionalBubbleSort(SortAlgorithm):
+class CocktailSort(SortAlgorithm):
     """
     Implements cocktail sort.
     O(n^2), stable, in-place
