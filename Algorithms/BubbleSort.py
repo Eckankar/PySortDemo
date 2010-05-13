@@ -1,6 +1,11 @@
 from SortAlgorithm import SortAlgorithm
 
 class BubbleSort(SortAlgorithm):
+    """
+    Implements bubble sort.
+    O(n^2), stable, in-place
+    http://en.wikipedia.org/wiki/Bubble_sort
+    """
     def sort(self):
         yield
         changed = True

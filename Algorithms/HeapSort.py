@@ -1,6 +1,14 @@
 from SortAlgorithm import SortAlgorithm
 
 class HeapSort(SortAlgorithm):
+    """
+    Implements heapsort.
+    O(n lg n), non-stable, in-place
+    http://en.wikipedia.org/wiki/Heapsort
+
+    Implementation based off of the one described in
+    "Introduction to Algorithms" by Cormen et al.
+    """
     def sort(self):
         yield
         for x in self.buildMaxHeap():

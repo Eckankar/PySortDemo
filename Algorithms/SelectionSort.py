@@ -1,6 +1,11 @@
 from SortAlgorithm import SortAlgorithm
 
 class SelectionSort(SortAlgorithm):
+    """
+    Implements selection sort.
+    O(n^2), non-stable, in-place
+    http://en.wikipedia.org/wiki/Selection_sort
+    """
     def sort(self):
         yield
         for i in range(0, len(self.items.items)):

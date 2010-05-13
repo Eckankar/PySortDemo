@@ -1,6 +1,14 @@
 from SortAlgorithm import SortAlgorithm
 
 class QuickSort(SortAlgorithm):
+    """
+    Implements quicksort.
+    O(n lg n), non-stable, in-place
+    http://en.wikipedia.org/wiki/Quicksort
+
+    Implementation based off of the one described in
+    "Introduction to Algorithms" by Cormen et al.
+    """
     def sort(self):
         yield
         for x in self.quicksort(0, len(self.items.items) - 1):

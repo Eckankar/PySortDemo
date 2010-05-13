@@ -1,6 +1,11 @@
 from SortAlgorithm import SortAlgorithm
 
 class InsertionSort(SortAlgorithm):
+    """
+    Implements insertion sort.
+    O(n^2), stable, in-place
+    http://en.wikipedia.org/wiki/Insertionsort
+    """
     def sort(self):
         yield
         iMarker = self.markers.addMarker(True, 0, (255, 0, 0))

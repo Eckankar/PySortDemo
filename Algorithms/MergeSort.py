@@ -2,6 +2,11 @@ from math import floor
 from SortAlgorithm import SortAlgorithm
 
 class MergeSort(SortAlgorithm):
+    """
+    Implements merge sort.
+    O(n lg n), stable, not in-place
+    http://en.wikipedia.org/wiki/Merge_sort
+    """
     def sort(self):
         yield
         for x in self.mergesort(0, len(self.items.items) - 1):

@@ -1,6 +1,13 @@
 from SortAlgorithm import SortAlgorithm
 
 class BidirectionalBubbleSort(SortAlgorithm):
+    """
+    Implements cocktail sort.
+    O(n^2), stable, in-place
+    http://en.wikipedia.org/wiki/Cocktail_sort
+
+    Basically a bubblesort that alternates between bubbling up and down.
+    """
     def sort(self):
         yield
         goingDown = True
