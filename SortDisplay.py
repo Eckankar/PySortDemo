@@ -72,7 +72,7 @@ def main():
             'selectionsort': SelectionSort(),
             'mergesort'    : MergeSort(),
             'bubblesort'   : BubbleSort(),
-            'bibubblesort' : BidirectionalBubbleSort(),
+            'cocktailsort' : CocktailSort(),
             'shellsort'    : ShellSort(),
             'heapsort'     : HeapSort(),
     }
