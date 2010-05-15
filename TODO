@@ -1,4 +1,5 @@
 == Algorithms to be implemented (in order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
+- Binary insertion sort ( http://www.brpreiss.com/books/opus5/html/page487.html )
 - Comb sort ( http://en.wikipedia.org/wiki/Comb_sort )
