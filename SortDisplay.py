@@ -77,6 +77,7 @@ def main():
             'heapsort'           : HeapSort(),
             'insertionquicksort' : InsertionQuickSort(),
             'insertionmergesort' : InsertionMergeSort(),
+            'oddevensort'        : OddEvenSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
