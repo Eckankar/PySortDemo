@@ -78,6 +78,7 @@ def main():
             'insertionquicksort' : InsertionQuickSort(),
             'insertionmergesort' : InsertionMergeSort(),
             'oddevensort'        : OddEvenSort(),
+            'gnomesort'          : GnomeSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
