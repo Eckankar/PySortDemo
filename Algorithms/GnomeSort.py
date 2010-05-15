@@ -11,10 +11,10 @@ class GnomeSort(SortAlgorithm):
 
         i = 0
         iMarker = self.markers.addMarker(False, 0, (255, 0, 0))
-        newMarker = self.markers.addMarker(False, 1, (0, 128, 0))
 
         while i < len(self.items.items):
             self.markers.moveMarker(iMarker, i)
+            yield
 
             if self.cmp.eq(i, 0) or self.cmp.lteI(i-1, i):
                 i += 1
@@ -22,5 +22,4 @@ class GnomeSort(SortAlgorithm):
                 self.items.swap(i-1, i)
                 i -= 1
 
-            self.markers.moveMarker(newMarker, i)
-            yield
+            # we yield before the swap for better visual effect
