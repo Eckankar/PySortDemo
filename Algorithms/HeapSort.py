@@ -15,6 +15,7 @@ class HeapSort(SortAlgorithm):
             yield
         for i in range(len(self.items.items) - 1, 0, -1):
             self.items.swap(0, i)
+            self.markers.addMarker(False, i, (0, 255, 0))
             yield
             for x in self.maxHeapify(0, i):
                 yield
