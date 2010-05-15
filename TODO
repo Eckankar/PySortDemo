@@ -1,7 +1,6 @@
 == Algorithms to be implemented (in order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
 - Gnome sort ( http://en.wikipedia.org/wiki/Gnome_sort )
-- Merge sort that uses insertion sort when sorting < k elements.
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
 - Comb sort ( http://en.wikipedia.org/wiki/Comb_sort )
 - Odd-even sort ( http://en.wikipedia.org/wiki/Odd-even_sort )

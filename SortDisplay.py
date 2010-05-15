@@ -76,6 +76,7 @@ def main():
             'shellsort'          : ShellSort(),
             'heapsort'           : HeapSort(),
             'insertionquicksort' : InsertionQuickSort(),
+            'insertionmergesort' : InsertionMergeSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
