@@ -19,10 +19,23 @@ class ShellSort(SortAlgorithm):
 
         for step in hs:
             for start in range(0, step):
+                    # Mark what we're sorting first
+                    markers = []
                     for i in range(start, len(self.items.items), step):
+                        markers.append(self.markers.addMarker(False, i, (255, 0, 0)))
+
+                    positionMarker = self.markers.addMarker(True, 0, (0, 0, 255))
+
+                    for i in range(start, len(self.items.items), step):
+                        self.markers.moveMarker(positionMarker, i+1)
                         j = i - step
                         while self.cmp.gtI(j, j + step) and self.cmp.gte(j, start):
                             self.items.swap(j, j + step)
                             j -= step
                             yield
                         yield
+
+                    # Clear the markers again
+                    for marker in markers:
+                        self.markers.removeMarker(marker)
+                    self.markers.removeMarker(positionMarker)
