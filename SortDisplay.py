@@ -80,6 +80,7 @@ def main():
             'oddevensort'         : OddEvenSort(),
             'gnomesort'           : GnomeSort(),
             'binaryinsertionsort' : BinaryInsertionSort(),
+            'bidirselectionsort'  : BidirectionalSelectionSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
