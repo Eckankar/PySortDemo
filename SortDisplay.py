@@ -81,6 +81,7 @@ def main():
             'gnomesort'           : GnomeSort(),
             'binaryinsertionsort' : BinaryInsertionSort(),
             'bidirselectionsort'  : BidirectionalSelectionSort(),
+            'stoogesort'          : StoogeSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
