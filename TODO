@@ -1,7 +1,6 @@
 == Algorithms to be implemented (in rough order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
-- Binary insertion sort ( http://www.brpreiss.com/books/opus5/html/page487.html )
 - Comb sort ( http://en.wikipedia.org/wiki/Comb_sort )
 - Bidirectional selection sort ( http://home.westman.wave.ca/~rhenry/sort/src/BidirectionalSelectionSortAlgorithm.java )
 - JSort ( http://en.wikipedia.org/wiki/JSort + http://home.westman.wave.ca/~rhenry/sort/src/JSortAlgorithm.java )

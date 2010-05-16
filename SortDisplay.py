@@ -67,18 +67,19 @@ class SortDisplay:
 def main():
     """ Main method, called on execution of the .py from the commandline """
     algorithms = {
-            'insertionsort'      : InsertionSort(),
-            'quicksort'          : QuickSort(),
-            'selectionsort'      : SelectionSort(),
-            'mergesort'          : MergeSort(),
-            'bubblesort'         : BubbleSort(),
-            'cocktailsort'       : CocktailSort(),
-            'shellsort'          : ShellSort(),
-            'heapsort'           : HeapSort(),
-            'insertionquicksort' : InsertionQuickSort(),
-            'insertionmergesort' : InsertionMergeSort(),
-            'oddevensort'        : OddEvenSort(),
-            'gnomesort'          : GnomeSort(),
+            'insertionsort'       : InsertionSort(),
+            'quicksort'           : QuickSort(),
+            'selectionsort'       : SelectionSort(),
+            'mergesort'           : MergeSort(),
+            'bubblesort'          : BubbleSort(),
+            'cocktailsort'        : CocktailSort(),
+            'shellsort'           : ShellSort(),
+            'heapsort'            : HeapSort(),
+            'insertionquicksort'  : InsertionQuickSort(),
+            'insertionmergesort'  : InsertionMergeSort(),
+            'oddevensort'         : OddEvenSort(),
+            'gnomesort'           : GnomeSort(),
+            'binaryinsertionsort' : BinaryInsertionSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
