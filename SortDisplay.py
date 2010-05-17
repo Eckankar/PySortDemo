@@ -82,6 +82,7 @@ def main():
             'binaryinsertionsort' : BinaryInsertionSort(),
             'bidirselectionsort'  : BidirectionalSelectionSort(),
             'stoogesort'          : StoogeSort(),
+            'sillysort'           : SillySort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
