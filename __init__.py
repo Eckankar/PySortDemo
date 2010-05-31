@@ -1,1 +1,1 @@
-__all__ = ['SortDisplay', 'Comparator', 'Orderable']
+__all__ = ['SortDisplay', 'Comparator', 'Orderable', 'Markers']
