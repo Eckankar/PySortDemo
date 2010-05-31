@@ -1,3 +1,6 @@
+== Features that could be nifty ==
+- Side-by-side comparison of algorithms.
+
 == Algorithms to be implemented (in rough order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
