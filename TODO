@@ -6,6 +6,7 @@
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
 - Comb sort ( http://en.wikipedia.org/wiki/Comb_sort )
 - JSort ( http://en.wikipedia.org/wiki/JSort + http://home.westman.wave.ca/~rhenry/sort/src/JSortAlgorithm.java )
+- Runsort ( http://www.scss.tcd.ie/publications/tech-reports/reports.05/TCD-CS-2005-34.pdf )
 - Sift sort ( http://home.westman.wave.ca/~rhenry/sort/src/SiftSort2Algorithm.java ) (I'm curious to see if it's a sort.)
 - In-place merge sort ( http://www.cs.ubc.ca/~harrison/Java/MergeSortAlgorithm.java.html )
 - Introsort ( http://en.wikipedia.org/wiki/Introsort )
