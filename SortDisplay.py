@@ -83,6 +83,7 @@ def main():
             'bidirselectionsort'  : BidirectionalSelectionSort(),
             'stoogesort'          : StoogeSort(),
             'sillysort'           : SillySort(),
+            'bogosort'            : BogoSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
