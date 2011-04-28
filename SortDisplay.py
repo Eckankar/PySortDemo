@@ -84,6 +84,7 @@ def main():
             'stoogesort'          : StoogeSort(),
             'sillysort'           : SillySort(),
             'bogosort'            : BogoSort(),
+            'combsort'            : CombSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
