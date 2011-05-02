@@ -7,14 +7,20 @@ from threading import Event, Thread
 from Algorithms import *
 from optparse import OptionParser
 from time import sleep
+import copy
 
 class SortDisplay:
     """Visualization of sorting algorithms."""
-    def __init__(self, algorithm, stop_event, options):
+    def __init__(self, algorithm, stop_event, options, compare=None):
         self.stopEvent = stop_event
 
         self.numLines = options.numLines
         self.width = options.width
+
+        self.compare = compare
+
+        self.stop = False
+        self.cstop = compare == None
 
         self.items = Orderable(self.numLines)
         self.cmp = Comparator(self.items)
@@ -24,8 +30,20 @@ class SortDisplay:
 
         self.gen = algorithm.sort()
 
+        if compare != None:
+            self.citems = copy.deepcopy(self.items)
+            self.ccmp = Comparator(self.citems)
+            self.cmarkers = Markers()
+            compare.initialize(self.ccmp, self.citems, self.cmarkers)
+
+            self.cgen = compare.sort()
+
         pygame.init()
-        self.window = pygame.display.set_mode((self.width, 6 * (self.numLines+1)))
+
+        if compare == None:
+            self.window = pygame.display.set_mode((self.width, 6 * (self.numLines+1)))
+        else:
+            self.window = pygame.display.set_mode((self.width * 2 + 5, 6 * (self.numLines+1)))
 
         self.i = 0
         self.update()
@@ -33,12 +51,21 @@ class SortDisplay:
     def update(self):
         """ Update the graphical display. """
         self.window.fill((255, 255, 255))
-        for i in range(0, len(self.items.items)):
-            y = 6 * (i+1)
-            pygame.draw.line(self.window, (0, 0, 0), (3, y),\
-                             ((self.width-6) * self.items.items[i] + 3, y))
 
-        for id, marker in self.markers.markers.iteritems():
+        self.__update_algorithm(self.items.items, self.markers.markers, 0)
+
+        if self.compare != None:
+            self.__update_algorithm(self.citems.items, self.cmarkers.markers, self.width + 5)
+
+        pygame.display.flip()
+
+    def __update_algorithm(self, items, markers, xoffset=0):
+        for i in range(0, len(items)):
+            y = 6 * (i+1)
+            pygame.draw.line(self.window, (0, 0, 0), (3 + xoffset, y),\
+                             ((self.width-6) * items[i] + 3 + xoffset, y))
+
+        for id, marker in markers.iteritems():
             y = 6 * (marker['index'] + 1)
 
             if marker['above']:
@@ -48,19 +75,26 @@ class SortDisplay:
             else:
                 xStart = 3
                 try:
-                    xEnd = (self.width - 6) * self.items.items[marker['index']] + 3
+                    xEnd = (self.width - 6) * items[marker['index']] + 3
                 except:
                     xEnd = 3
 
             pygame.draw.line(self.window, marker['color'],\
-                             (xStart, y), (xEnd, y))
-
-        pygame.display.flip()
+                             (xStart + xoffset, y), (xEnd + xoffset, y))
 
     def step(self):
         try:
             self.gen.next()
         except StopIteration:
+            self.stop = True
+
+        if self.compare != None:
+            try:
+                self.cgen.next()
+            except StopIteration:
+                self.cstop = True
+
+        if self.stop and self.cstop:
             self.stopEvent.set()
 
 
@@ -100,12 +134,16 @@ def main():
     parser.add_option('-n', type='int',
                       default=100, dest='numLines',
                       help='number of lines to sort')
+    parser.add_option('-c', type='choice', default=None,
+                      dest='compare', choices=algorithms.keys(),
+                      help='algorithm to compare with')
     (options, args) = parser.parse_args()
     algorithm = algorithms[options.algorithm];
+    compare = None if options.compare == None else algorithms[options.compare]
 
     stopEvent = Event()
 
-    disp = SortDisplay(algorithm, stopEvent, options)
+    disp = SortDisplay(algorithm, stopEvent, options, compare)
 
     def update():
         """ Update loop; updates the screen every few seconds. """
@@ -129,6 +167,10 @@ def main():
 
     print disp.items.swaps, "swaps"
     print disp.cmp.comparisons, "comparisons"
+    if compare != None:
+        print "comparison:"
+        print disp.citems.swaps, "swaps"
+        print disp.ccmp.comparisons, "comparisons"
 
 if __name__ == "__main__":
     main()
