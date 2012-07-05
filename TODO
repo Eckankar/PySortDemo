@@ -3,6 +3,7 @@
 
 == Algorithms to be implemented (in rough order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
+- Patience sorting ( http://en.wikipedia.org/wiki/Patience_sorting )
 - Strand sort ( http://en.wikipedia.org/wiki/Strand_sort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
 - JSort ( http://en.wikipedia.org/wiki/JSort + http://home.westman.wave.ca/~rhenry/sort/src/JSortAlgorithm.java )
