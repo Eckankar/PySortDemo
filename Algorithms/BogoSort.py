@@ -1,6 +1,7 @@
 from SortAlgorithm import SortAlgorithm
 import random
 
+
 class BogoSort(SortAlgorithm):
     """
     Implements bogo sort.

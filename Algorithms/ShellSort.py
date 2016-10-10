@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class ShellSort(SortAlgorithm):
     """
     Implements shell sort.

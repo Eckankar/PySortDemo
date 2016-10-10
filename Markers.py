@@ -10,7 +10,7 @@ class Markers:
     def addMarker(self, above, index, color):
         """
         Adds a marker to our collection.
-        
+
         Parameters:
         - above (boolean): If true, the marker will be displayed above the line of the given index.
                            If false, the marker will be displayed on the line of the given index.
@@ -22,10 +22,10 @@ class Markers:
         """
         self.id += 1
 
-        marker = { 'id': self.id,
-                   'above': above,
-                   'index': index,
-                   'color': color }
+        marker = {'id': self.id,
+                  'above': above,
+                  'index': index,
+                  'color': color}
 
         self.markers[self.id] = marker
 
@@ -38,5 +38,3 @@ class Markers:
     def removeMarker(self, id):
         """ Removes the marker with the given id. """
         del self.markers[id]
-
-

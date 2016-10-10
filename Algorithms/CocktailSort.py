@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class CocktailSort(SortAlgorithm):
     """
     Implements cocktail sort.
@@ -40,4 +41,3 @@ class CocktailSort(SortAlgorithm):
             self.markers.removeMarker(bubbleMarker)
             goingDown = not goingDown
             yield
-

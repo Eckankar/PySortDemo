@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class BidirectionalSelectionSort(SortAlgorithm):
     """
     Implements bidirectional selection sort.

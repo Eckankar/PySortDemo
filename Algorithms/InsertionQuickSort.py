@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class InsertionQuickSort(SortAlgorithm):
     """
     Implements a quicksort/insertion sort hybrid.
@@ -18,7 +19,7 @@ class InsertionQuickSort(SortAlgorithm):
 
     def sortInterval(self, p, r):
         """
-        Sorts the interval using quicksort if the length > THRESHOLD, 
+        Sorts the interval using quicksort if the length > THRESHOLD,
         else using insertion sort.
         """
         if self.cmp.lt(r-p, self.THRESHOLD):
@@ -44,7 +45,6 @@ class InsertionQuickSort(SortAlgorithm):
             yield
             self.markers.removeMarker(jMarker)
         self.markers.removeMarker(iMarker)
-
 
     def quickSort(self, p, r):
         """ Quicksorts the interval with indices [p, ..., r] """

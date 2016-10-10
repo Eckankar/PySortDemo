@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class BinaryInsertionSort(SortAlgorithm):
     """
     Implements binary insertion sort.

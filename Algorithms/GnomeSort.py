@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class GnomeSort(SortAlgorithm):
     """
     Implements gnome sort.

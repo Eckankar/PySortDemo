@@ -1,5 +1,6 @@
 from random import random
 
+
 class Orderable:
     """
     Container for the items we wish to sort.

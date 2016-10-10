@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class QuickSort(SortAlgorithm):
     """
     Implements quicksort.

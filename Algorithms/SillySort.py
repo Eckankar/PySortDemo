@@ -1,6 +1,7 @@
 from SortAlgorithm import SortAlgorithm
 from time import sleep
 
+
 class SillySort(SortAlgorithm):
     """
     Implements silly sort.

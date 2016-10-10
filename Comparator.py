@@ -8,7 +8,7 @@ class Comparator:
     lt - less than - <
     lte - less than or equal to - <=
     eq - equal to - ==
-    
+
     There are two versions of each method; one with I appended to the end and one without it. (gtI vs gt)
     The one with the I appended compares on the items to be sorted, while the ones without compare the passed arguments.
     For instance, gtI(4, 5) compares element 4 with element 5, while gt(4, 5) is equivalent to 4 > 5.

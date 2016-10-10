@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class BubbleSort(SortAlgorithm):
     """
     Implements bubble sort.

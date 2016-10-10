@@ -1,6 +1,7 @@
 from math import floor
 from SortAlgorithm import SortAlgorithm
 
+
 class InsertionMergeSort(SortAlgorithm):
     """
     Implements a merge sort/insertion sort hybrid.
@@ -19,7 +20,7 @@ class InsertionMergeSort(SortAlgorithm):
 
     def sortInterval(self, p, r):
         """
-        Sorts the interval using mergesort if the length > THRESHOLD, 
+        Sorts the interval using mergesort if the length > THRESHOLD,
         else using insertion sort.
         """
         if self.cmp.lt(r-p, self.THRESHOLD):
@@ -84,4 +85,3 @@ class InsertionMergeSort(SortAlgorithm):
             yield
 
         self.markers.removeMarker(kMarker)
-

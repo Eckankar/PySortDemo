@@ -1,6 +1,7 @@
 from math import floor
 from SortAlgorithm import SortAlgorithm
 
+
 class MergeSort(SortAlgorithm):
     """
     Implements merge sort.

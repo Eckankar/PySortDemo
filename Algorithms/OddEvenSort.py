@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class OddEvenSort(SortAlgorithm):
     """
     Implements odd-even sort.

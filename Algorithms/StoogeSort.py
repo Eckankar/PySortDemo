@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class StoogeSort(SortAlgorithm):
     """
     Implements Stooge sort

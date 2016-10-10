@@ -1,5 +1,6 @@
 from SortAlgorithm import SortAlgorithm
 
+
 class CombSort(SortAlgorithm):
     """
     Implements comb sort.
@@ -22,7 +23,6 @@ class CombSort(SortAlgorithm):
 
             i = 0
             swaps = False
-
 
             while i+gap < len(self.items.items):
                 self.markers.moveMarker(imarker, i)
