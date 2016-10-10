@@ -119,6 +119,7 @@ def main():
             'sillysort'           : SillySort(),
             'bogosort'            : BogoSort(),
             'combsort'            : CombSort(),
+            'inplacemergesort'    : InplaceMergeSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
