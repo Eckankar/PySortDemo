@@ -9,7 +9,6 @@ class InplaceMergeSort(SortAlgorithm):
     """
 
     def sort(self):
-        yield
         for x in self.inplacemergesort(0, len(self.items.items) - 1):
             yield
 
