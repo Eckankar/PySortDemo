@@ -20,4 +20,6 @@ To draw colored lines for illustration, use `self.markers`, which is an instance
 
 When creating a marker, you can either decide to change the color of an element (`above` set to `False`; for instance used for highlighting the current element you're looking at), or draw a separator line above an element (`above` set to `True`; for instance used to show that the problem has been split into smaller sub-problems). The return value of `addMarker` is needed for later manipulation of the marker, so keep track of that.
 
+If you wish to swap element `i` and `j`, please use `self.items.swap(i, j)`.
+
 The algorithms are implemeted as iterators, as this allows the program to step through the algorithm at it's own pace, allowing for the simulation to be slowed down. This is done by having the sorting function yield whenever a logical step has occurred in the algorithm. See the other algorithms for examples.
