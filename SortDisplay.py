@@ -120,6 +120,7 @@ def main():
             'bogosort'            : BogoSort(),
             'combsort'            : CombSort(),
             'inplacemergesort'    : InplaceMergeSort(),
+            'jsort'               : JSort(),
     }
     parser = OptionParser()
     parser.add_option('-a', '--algorithm', type='choice',
