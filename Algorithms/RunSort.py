@@ -6,6 +6,7 @@ class RunSort(SortAlgorithm):
     Implements runsort, using the accumulator approach.
     A faster implementation would be to use a binary merge,
     similar to that of merge sort.
+    https://www.scss.tcd.ie/publications/tech-reports/reports.05/TCD-CS-2005-34.pdf
     """
 
     def sort(self):
