@@ -105,6 +105,7 @@ def main():
             'quicksort'           : QuickSort(),
             'selectionsort'       : SelectionSort(),
             'mergesort'           : MergeSort(),
+            'runsort'             : RunSort(),
             'bubblesort'          : BubbleSort(),
             'cocktailsort'        : CocktailSort(),
             'shellsort'           : ShellSort(),
