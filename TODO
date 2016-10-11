@@ -7,7 +7,5 @@
 - UnShuffle sort ( http://xlinux.nist.gov/dads//HTML/unshufflsort.html )
 - Strand sort ( http://en.wikipedia.org/wiki/Strand_sort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
-- JSort ( http://en.wikipedia.org/wiki/JSort + http://home.westman.wave.ca/~rhenry/sort/src/JSortAlgorithm.java )
-- Runsort ( http://www.scss.tcd.ie/publications/tech-reports/reports.05/TCD-CS-2005-34.pdf )
 - Sift sort ( http://home.westman.wave.ca/~rhenry/sort/src/SiftSort2Algorithm.java ) (I'm curious to see if it's a sort.)
 - Introsort ( http://en.wikipedia.org/wiki/Introsort )
