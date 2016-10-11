@@ -7,6 +7,10 @@ class InsertionSort(SortAlgorithm):
     http://en.wikipedia.org/wiki/Insertionsort
     """
     def sort(self):
+        for x in self.insertionSort():
+            yield
+
+    def insertionSort(self):
         yield
         iMarker = self.markers.addMarker(True, 0, (255, 0, 0))
         for i in range(1, len(self.items.items)):

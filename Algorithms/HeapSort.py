@@ -11,34 +11,38 @@ class HeapSort(SortAlgorithm):
     """
     def sort(self):
         yield
-        for x in self.buildMaxHeap():
+        for x in self.buildHeap(isDown=True, isMax=True):
             yield
         for i in range(len(self.items.items) - 1, 0, -1):
             self.items.swap(0, i)
             self.markers.addMarker(False, i, (0, 255, 0))
             yield
-            for x in self.maxHeapify(0, i):
+            for x in self.heapify(0, i, isDown=True, isMax=True):
                 yield
 
-    def maxHeapify(self, i, heapSize):
+    def heapify(self, i, heapSize, isDown=True, isMax=True):
         def left(i): return 2*i+1
         def right(i): return 2*(i+1)
-        (l, r, largest) = (left(i), right(i), i)
 
-        if self.cmp.lt(l, heapSize) and self.cmp.gtI(l, largest):
-            largest = l
+        (l, r, best) = (left(i), right(i), i)
+        if not isDown:
+            l = heapSize-l
+            r = heapSize-r
 
-        if self.cmp.lt(r, heapSize) and self.cmp.gtI(r, largest):
-            largest = r
+        def inBounds(i): return self.cmp.lt(i, heapSize) if isDown else self.cmp.gte(i, 0)
+        def isBetter(i): return self.cmp.gtI(i, best) if isMax else self.cmp.ltI(i, best)
 
-        if largest != i:
-            self.items.swap(i, largest)
+        if inBounds(l) and isBetter(l): best = l
+        if inBounds(r) and isBetter(r): best = r
+
+        if best != i:
+            self.items.swap(i, best)
             yield
-            for x in self.maxHeapify(largest, heapSize):
+            for x in self.heapify(best, heapSize, isDown, isMax):
                 yield
 
-    def buildMaxHeap(self):
+    def buildHeap(self, isDown=True, isMax=True):
         heapSize = len(self.items.items)
         for i in range(heapSize // 2 - 1, -1, -1):
-            for x in self.maxHeapify(i, heapSize):
+            for x in self.heapify(i if isDown else heapSize-i, heapSize, isDown, isMax):
                 yield
