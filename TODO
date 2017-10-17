@@ -3,7 +3,6 @@
 
 == Algorithms to be implemented (in rough order of interest) ==
 - Smoothsort ( http://en.wikipedia.org/wiki/Smoothsort )
-- Patience sorting ( http://en.wikipedia.org/wiki/Patience_sorting )
 - UnShuffle sort ( http://xlinux.nist.gov/dads//HTML/unshufflsort.html )
 - Strand sort ( http://en.wikipedia.org/wiki/Strand_sort )
 - Timsort ( http://en.wikipedia.org/wiki/Timsort )
