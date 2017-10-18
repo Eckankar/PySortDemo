@@ -38,7 +38,3 @@ class Markers:
     def removeMarker(self, id):
         """ Removes the marker with the given id. """
         del self.markers[id]
-
-    def removeAllMarkers(self):
-        """ Removes all existing markers. """
-        self.markers.clear()
