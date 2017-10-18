@@ -109,6 +109,7 @@ def main():
             'patiencesort'        : PatienceSort(),
             'introsort'           : IntroSort(),
             'bubblesort'          : BubbleSort(),
+            'circlesort'          : CircleSort(),
             'cocktailsort'        : CocktailSort(),
             'shellsort'           : ShellSort(),
             'heapsort'            : HeapSort(),
